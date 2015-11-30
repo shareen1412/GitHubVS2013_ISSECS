@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.Master.cs" Inherits="ISECCS_PJ.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Under Construction</title>
+    <style type="text/css">
+        ul#dropdown {
+            min-width: 125px; /* Set width of the dropdown */
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+        }
+
+        ul li:hover ul#dropdown {
+            display: block; /* Display the dropdown */
+        }
+
+        ul li ul#dropdown li {
+            display: block;
+        }
+
+        a#de {
+            background-color: transparent;
+            width:150px;
+        }
+
+        #img_pic{
+            /*border-radius:50%;*/
+        }
+    </style>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/UserPage/#">[Application name]</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/UserPage/#">Home</a></li>
+                        <li>
+                            <a href="#">Cryptography &#9662;</a>
+                            <ul class="dropdown-menu" id="dropdown">
+                                <li><a runat="server" href="~/UserPage/#">Encrypt</a></li>
+                                <li><a runat="server" href="~/UserPage/#">Decrypt</a></li>
+                            </ul>
+                        </li>
+                        <li><a runat="server" href="~/UserPage/#">Steganography</a></li>
+                        <li><a runat="server" href="~/UserPage/#">Watermarking</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav" style="float: right">
+                        <li style="float: right">
+                            <a id="de" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <asp:Image class="img-circle" ID="img_pic" runat="server" ImageUrl="~/Images/Unknown.gif" Width="20px" Height="20px" />
+                                &nbsp;
+                                <asp:Label class="userName" ID="lbl_session" runat="server">[lbl_session]</asp:Label>
+                                &#9662;</a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/UserPage/#">Change Password</a></li>
+                                <li class="divider"></li>
+                                <li><a runat="server" href="~/UserPage/#">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <%--<p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>--%>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
