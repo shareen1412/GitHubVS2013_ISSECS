@@ -146,6 +146,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ISECCS.mdf" />
+    <Content Include="App_Data\ISECCS_log.ldf">
+      <DependentUpon>ISECCS.mdf</DependentUpon>
+    </Content>
     <Content Include="Images\Unknown.gif" />
     <Content Include="PublicPage\PublicAbout.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -214,6 +218,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
+    <Content Include="UserPage\Steganography.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -393,6 +398,13 @@
       <DependentUpon>PublicMaster.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserPage\Steganography.aspx.cs">
+      <DependentUpon>Steganography.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Steganography.aspx.designer.cs">
+      <DependentUpon>Steganography.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -410,10 +422,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPage\" />
-    <Folder Include="App_Data\" />
     <Folder Include="BusinessLogicLayer\" />
     <Folder Include="CSS\" />
     <Folder Include="DataAccessLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{c2b02882-068b-43e4-9975-c2bda4a72912}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{3f2ce30a-e788-40b9-b813-203266ba7765}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
