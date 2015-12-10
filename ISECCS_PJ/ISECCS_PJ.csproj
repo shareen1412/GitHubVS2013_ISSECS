@@ -150,6 +150,7 @@
     <Content Include="App_Data\ISECCS_log.ldf">
       <DependentUpon>ISECCS.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\MainStyle.css" />
     <Content Include="Images\Unknown.gif" />
     <Content Include="PublicPage\PublicAbout.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -422,9 +423,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPage\" />
-    <Folder Include="BusinessLogicLayer\" />
-    <Folder Include="CSS\" />
-    <Folder Include="DataAccessLayer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
