@@ -224,6 +224,7 @@
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
     <Content Include="UserPage\Steganography.aspx" />
+    <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
     <Content Include="UserPage\UserWatermarking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -434,6 +435,12 @@
     </Compile>
     <Compile Include="UserPage\Steganography.aspx.designer.cs">
       <DependentUpon>Steganography.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserChangePassword.aspx.cs">
+      <DependentUpon>UserChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserChangePassword.aspx.designer.cs">
+      <DependentUpon>UserChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
