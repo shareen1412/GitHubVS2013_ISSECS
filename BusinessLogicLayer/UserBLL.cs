@@ -22,7 +22,7 @@ namespace BusinessLogicLayer
             string returnMessage = "User record saved successfully.";
 
             return returnMessage;
-               
+
         }
 
         //UserDAL user = new UserDAL();
@@ -53,7 +53,7 @@ namespace BusinessLogicLayer
             {
                 //No error; proceed
                 UserDAL userdal = new UserDAL(userName, password, email, fullName, contactNo);
-                
+
                 int nofRows = 0;
                 nofRows = userdal.UserInsert();
 
@@ -115,6 +115,6 @@ namespace BusinessLogicLayer
         //    tb_password.Text = Convert.ToBase64String(signature);
         //}
 
-        
+
     }
 }
