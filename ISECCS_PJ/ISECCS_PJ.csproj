@@ -373,6 +373,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="PublicPage\PublicCantAccessAccount.aspx.cs">
       <DependentUpon>PublicCantAccessAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicCantAccessAccount.aspx.designer.cs">
       <DependentUpon>PublicCantAccessAccount.aspx</DependentUpon>
@@ -412,18 +413,21 @@
     </Compile>
     <Compile Include="PublicPage\PublicLogin.aspx.cs">
       <DependentUpon>PublicLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicLogin.aspx.designer.cs">
       <DependentUpon>PublicLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="PublicPage\PublicRegister.aspx.cs">
       <DependentUpon>PublicRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicRegister.aspx.designer.cs">
       <DependentUpon>PublicRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.cs">
       <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.designer.cs">
       <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
@@ -438,6 +442,7 @@
     </Compile>
     <Compile Include="UserPage\UserChangePassword.aspx.cs">
       <DependentUpon>UserChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\UserChangePassword.aspx.designer.cs">
       <DependentUpon>UserChangePassword.aspx</DependentUpon>
@@ -451,6 +456,7 @@
     </Compile>
     <Compile Include="UserPage\UserWatermarking.aspx.cs">
       <DependentUpon>UserWatermarking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\UserWatermarking.aspx.designer.cs">
       <DependentUpon>UserWatermarking.aspx</DependentUpon>
@@ -468,10 +474,6 @@
     <Folder Include="TempImages\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
-      <Project>{c2b02882-068b-43e4-9975-c2bda4a72912}</Project>
-      <Name>BusinessLogicLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{3f2ce30a-e788-40b9-b813-203266ba7765}</Project>
       <Name>DataAccessLayer</Name>
