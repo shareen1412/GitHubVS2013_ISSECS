@@ -36,16 +36,24 @@ namespace BusinessLogicLayer
             //    returnMessage = "Please enter all fields.";
             //}
 
-            if (userName.Length > 120 || userName.Length == 0)
+            if (userName.Length > 120)
                 returnMessage += "UserName exceeds 120 characters!<br />";
-            if (password.Length > 120 || password.Length == 0)
+            if (userName.Length == 0)
+                returnMessage += "Please enter an username.<br />";
+            if (password.Length > 120)
                 returnMessage += "Password exceeds 120 characters!<br />";
+            if (password.Length == 0)
+                returnMessage += "Please enter a password.<br />";
             if (password != confirmPassword)
                 returnMessage += "Passwords do not match. Please try again.<br />";
-            if (email.Length > 120 || email.Length == 0)
+            if (email.Length > 120)
                 returnMessage += "Email exceeds 120 characters!<br />";
-            if (fullName.Length > 120 || fullName.Length == 0)
+            if (email.Length == 0)
+                returnMessage += "Please enter an email.<br />";
+            if (fullName.Length > 120)
                 returnMessage += "Name exceeds 120 characters!<br />";
+            if (fullName.Length == 0)
+                returnMessage += "Please enter your name.<br />";
             if (contactNo.Length != 8)
                 returnMessage += "Contact Number needs to be 8 integers!<br />";
 
@@ -65,18 +73,18 @@ namespace BusinessLogicLayer
             return returnMessage;
         }
 
-        public string UpdateUser(string password, string contactNo)
+        public string UpdateUser(string password, string confirmPassword, string contactNo)
         {
             string returnMessage = "";
 
-            if (password.Length < 0)
-                returnMessage += "Please enter a password.";
             if (password.Length > 120)
                 returnMessage += "Password exceeds 120 characters!<br />";
-            if (contactNo.Length < 0)
-                returnMessage += "Please enter a contact number.";
-            if (contactNo.Length > 8)
-                returnMessage += "Contact Number exceeds 8 integers!<br />";
+            if (password.Length == 0)
+                returnMessage += "Please enter a password.<br />";
+            if (password != confirmPassword)
+                returnMessage += "Both new passwords do not match. Please try again.<br />";
+            if (contactNo.Length != 8)
+                returnMessage += "Contact Number needs to be 8 integers!<br />";
 
             if (returnMessage.Length == 0)
             {
