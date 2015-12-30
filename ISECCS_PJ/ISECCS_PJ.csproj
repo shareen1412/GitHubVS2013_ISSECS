@@ -458,7 +458,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPage\" />
-    <Folder Include="TempImages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
