@@ -49,7 +49,7 @@ namespace ISECCS_PJ.UserPage
                     Font font = new Font("Arial", 16);
                     //Font font = new Font((ddl_fontType.SelectedItem).ToString(), ddl_fontSize.SelectedIndex);
 
-                    g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(200, 20));
+                    g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(20, 20));
 
                     upImage.Save(Path.Combine(Server.MapPath("~/TempImages/"), fileName));
                     img_userImage.ImageUrl = "~/TempImages/" + "//" + fileName;
