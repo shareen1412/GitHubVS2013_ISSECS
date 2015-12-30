@@ -36,19 +36,26 @@ namespace ISECCS_PJ.PublicPage
             //calling BLL class for register button
             //userdal.UserInsert(tb_username.Text, tb_password.Text, tb_email.Text, tb_name.Text, tb_contact.Text);
 
-            userbll.CreateUser(tb_username.Text, tb_password.Text, tb_cpassword.Text, tb_email.Text, tb_name.Text, tb_contact.Text);
+            string  message = "";
+
+            message = userbll.CreateUser(tb_username.Text, tb_password.Text, tb_cpassword.Text, tb_email.Text, tb_name.Text, tb_contact.Text);
 
             //userdal.UserInsert();
 
             //userbll.CreateUser1();
 
-            lbl_msg.Text = "Account successfully created.";
+            if (message == "User record saved successfully.")
+            {
+                lbl_msg.Text = "Account successfully created.";
 
-            tb_username.Text = "";
-            tb_password.Text = "";
-            tb_email.Text = "";
-            tb_name.Text = "";
-            tb_contact.Text = "";
+                tb_username.Text = "";
+                tb_password.Text = "";
+                tb_email.Text = "";
+                tb_name.Text = "";
+                tb_contact.Text = "";
+            }
+            else
+                lbl_msg.Text = message;
 
             //byte[] rawTextBytes = Encoding.UTF8.GetBytes(tb_password.Text);
 

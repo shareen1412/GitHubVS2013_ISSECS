@@ -56,7 +56,7 @@
                 <asp:Button ID="btn_register" runat="server" OnClick="btn_register_Click" Text="Register" />
                 <br />
                 <br />
-                <asp:Label ID="lbl_msg" runat="server"></asp:Label>
+                <asp:Label ID="lbl_msg" runat="server" Font-Size="Medium" ForeColor="#CC0000"></asp:Label>
             </td>
         </tr>
     </table>

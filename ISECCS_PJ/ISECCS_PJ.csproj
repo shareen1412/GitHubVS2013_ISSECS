@@ -147,9 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ISECCS.mdf" />
-    <Content Include="App_Data\ISECCS_log.ldf">
-      <DependentUpon>ISECCS.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\ISECCS_log.ldf" />
     <Content Include="CSS\MainStyle.css" />
     <Content Include="Images\Unknown.gif" />
     <Content Include="PublicPage\PublicAbout.aspx" />
@@ -471,9 +469,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPage\" />
-    <Folder Include="TempImages\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{c2b02882-068b-43e4-9975-c2bda4a72912}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{3f2ce30a-e788-40b9-b813-203266ba7765}</Project>
       <Name>DataAccessLayer</Name>
