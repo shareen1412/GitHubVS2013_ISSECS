@@ -93,6 +93,13 @@ namespace ISECCS_PJ.UserPage
             {
 
             }
+        }
+
+        protected void bn_back_Click(object sender, EventArgs e)
+        {
+            string path = Server.MapPath("~/TempImages/");
+            File.Delete(path);
+            Response.Redirect("~/UserPage/UserHome");
         }//bn_download
     }
 }

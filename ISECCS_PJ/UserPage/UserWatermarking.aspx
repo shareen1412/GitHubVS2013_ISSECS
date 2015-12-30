@@ -109,6 +109,7 @@
                 <asp:Button ID="bn_preview" runat="server" OnClick="bn_preview_Click" Text="Preview" />
                 <asp:Button ID="bn_upload" runat="server" Text="Upload" />
                 <asp:Button ID="bn_download" runat="server" Text="Download" OnClick="bn_download_Click" />
+                <asp:Button ID="bn_back" runat="server" OnClick="bn_back_Click" Text="Back" />
             </td>
         </tr>
     </table>
