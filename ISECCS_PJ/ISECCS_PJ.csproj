@@ -147,9 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ISECCS.mdf" />
-    <Content Include="App_Data\ISECCS_log.ldf">
-      <DependentUpon>ISECCS.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\ISECCS_log.ldf" />
     <Content Include="CSS\MainStyle.css" />
     <Content Include="Images\Unknown.gif" />
     <Content Include="PublicPage\PublicAbout.aspx" />
@@ -224,6 +222,7 @@
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
     <Content Include="UserPage\Steganography.aspx" />
+    <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
     <Content Include="UserPage\UserWatermarking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -372,6 +371,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="PublicPage\PublicCantAccessAccount.aspx.cs">
       <DependentUpon>PublicCantAccessAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicCantAccessAccount.aspx.designer.cs">
       <DependentUpon>PublicCantAccessAccount.aspx</DependentUpon>
@@ -411,18 +411,21 @@
     </Compile>
     <Compile Include="PublicPage\PublicLogin.aspx.cs">
       <DependentUpon>PublicLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicLogin.aspx.designer.cs">
       <DependentUpon>PublicLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="PublicPage\PublicRegister.aspx.cs">
       <DependentUpon>PublicRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicRegister.aspx.designer.cs">
       <DependentUpon>PublicRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.cs">
       <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.designer.cs">
       <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
@@ -435,6 +438,13 @@
     <Compile Include="UserPage\Steganography.aspx.designer.cs">
       <DependentUpon>Steganography.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\UserChangePassword.aspx.cs">
+      <DependentUpon>UserChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UserChangePassword.aspx.designer.cs">
+      <DependentUpon>UserChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -444,6 +454,7 @@
     </Compile>
     <Compile Include="UserPage\UserWatermarking.aspx.cs">
       <DependentUpon>UserWatermarking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\UserWatermarking.aspx.designer.cs">
       <DependentUpon>UserWatermarking.aspx</DependentUpon>
