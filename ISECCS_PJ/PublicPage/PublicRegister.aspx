@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/PublicMaster.Master" AutoEventWireup="true" CodeBehind="PublicRegister.aspx.cs" Inherits="ISECCS_PJ.PublicPage.PublicRegister" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style ="width:100%;height:100%;text-align:center; vertical-align:middle">
+    <div style ="width:100%;height:100%; vertical-align:middle">
     <table class="nav-justified"> 
         <table align="center"> 
            
@@ -49,7 +49,7 @@
             <td id="middle">
                 <asp:Button ID="btn_next" runat="server" Text="Next" Width="113px" OnClick="btn_next_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" Width="123px" />
+                <asp:Button ID="btn_clear" runat="server" Text="Clear" Width="123px" OnClick="btn_clear_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                 <br />
                 <br />
