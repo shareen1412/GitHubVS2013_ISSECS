@@ -70,5 +70,15 @@ namespace ISECCS_PJ.PublicPage
 
             //tb_password.Text = Convert.ToBase64String(signature);
         }
+
+        protected void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_username.Text = "";
+            tb_password.Text = "";
+            tb_cpassword.Text = "";
+            tb_email.Text = "";
+            tb_name.Text = "";
+            tb_contact.Text = "";
+        }
     }
 }
