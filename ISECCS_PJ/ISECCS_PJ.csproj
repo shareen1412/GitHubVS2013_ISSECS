@@ -168,6 +168,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="PublicPage\PublicCantAccessAccount.aspx" />
     <Content Include="PublicPage\PublicContact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -186,6 +187,9 @@
     <Content Include="MasterPage\UserMaster.Master" />
     <Content Include="MasterPage\UserMaster.Mobile.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="PublicPage\PublicLogin.aspx" />
+    <Content Include="PublicPage\PublicRegister.aspx" />
+    <Content Include="PublicPage\PublicRegisterCaptcha.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -366,6 +370,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="PublicPage\PublicCantAccessAccount.aspx.cs">
+      <DependentUpon>PublicCantAccessAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicCantAccessAccount.aspx.designer.cs">
+      <DependentUpon>PublicCantAccessAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PublicPage\PublicContact.aspx.cs">
       <DependentUpon>PublicContact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -398,6 +408,24 @@
     </Compile>
     <Compile Include="MasterPage\PublicMaster.Mobile.Master.designer.cs">
       <DependentUpon>PublicMaster.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicLogin.aspx.cs">
+      <DependentUpon>PublicLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicLogin.aspx.designer.cs">
+      <DependentUpon>PublicLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicRegister.aspx.cs">
+      <DependentUpon>PublicRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicRegister.aspx.designer.cs">
+      <DependentUpon>PublicRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.cs">
+      <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.designer.cs">
+      <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="UserPage\Steganography.aspx.cs">
