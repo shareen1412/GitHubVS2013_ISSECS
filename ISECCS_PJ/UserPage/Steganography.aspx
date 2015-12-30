@@ -15,9 +15,10 @@
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 340px">
-                        <asp:TextBox ID="tb_file" runat="server" Width="320px"></asp:TextBox></td>
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                    </td>
                     <td>
-                        <asp:Button ID="btn_file" runat="server" Text="Browse" /></td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 340px">&nbsp;</td>
@@ -54,7 +55,7 @@
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 340px">
-                        <asp:Button ID="btn_submit" runat="server" Text="Submit" /></td>
+                        <asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="btn_submit_Click" /></td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
