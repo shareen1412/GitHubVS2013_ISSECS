@@ -29,31 +29,31 @@ namespace BusinessLogicLayer
 
         public string CreateUser(string userName, string password, string confirmPassword, string email, string fullName, string contactNo)
         {
-            string returnMessage = "hello";
+            string returnMessage = "";
 
             //if (userName.Length < 0 || password.Length < 0 || email.Length < 0 || fullName.Length < 0 || contactNo.Length < 0)
             //{
             //    returnMessage = "Please enter all fields.";
             //}
 
-            if (userName.Length > 120)
+            if (userName.Length > 120 || userName.Length == 0)
                 returnMessage += "UserName exceeds 120 characters!<br />";
-            if (password.Length > 120)
+            if (password.Length > 120 || password.Length == 0)
                 returnMessage += "Password exceeds 120 characters!<br />";
-            else if (password != confirmPassword)
+            if (password != confirmPassword)
                 returnMessage += "Passwords do not match. Please try again.<br />";
-            if (email.Length > 120)
+            if (email.Length > 120 || email.Length == 0)
                 returnMessage += "Email exceeds 120 characters!<br />";
-            if (fullName.Length > 120)
+            if (fullName.Length > 120 || fullName.Length == 0)
                 returnMessage += "Name exceeds 120 characters!<br />";
-            if (contactNo.Length > 8 || contactNo.Length < 8)
-                returnMessage += "Contact Number exceeds 8 integers!<br />";
+            if (contactNo.Length != 8)
+                returnMessage += "Contact Number needs to be 8 integers!<br />";
 
             if (returnMessage.Length == 0)
             {
                 //No error; proceed
                 UserDAL userdal = new UserDAL(userName, password, email, fullName, contactNo);
-
+                
                 int nofRows = 0;
                 nofRows = userdal.UserInsert();
 
