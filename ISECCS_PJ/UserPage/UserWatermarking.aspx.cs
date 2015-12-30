@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Drawing;
-using BusinessLogicLayer;
 using DataAccessLayer;
 
 namespace ISECCS_PJ.UserPage
