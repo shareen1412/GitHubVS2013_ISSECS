@@ -147,7 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ISECCS.mdf" />
-    <Content Include="App_Data\ISECCS_log.ldf" />
+    <Content Include="App_Data\ISECCS_log.ldf">
+      <DependentUpon>ISECCS.mdf</DependentUpon>
+    </Content>
     <Content Include="CSS\MainStyle.css" />
     <Content Include="Images\Unknown.gif" />
     <Content Include="PublicPage\PublicAbout.aspx" />
