@@ -148,12 +148,12 @@ namespace DataAccessLayer
 
                 //return nofRows;
             }
-                return nofRows;
 
             catch(Exception ex)
             {
                 Console.WriteLine("Error! " + ex.Message);
             }
+            return nofRows;
             
         }
 
