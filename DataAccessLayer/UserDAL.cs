@@ -88,7 +88,7 @@ namespace DataAccessLayer
 
             //try
             //{
-                string queryStr = "INSERT INTO TableUse (userName, password, email, fullName, contactNo) " +
+                string queryStr = "INSERT INTO TableUser (userName, password, email, fullName, contactNo) " +
                           " VALUES('" +
                           userName + "','" +
                           password + "','" +
@@ -120,10 +120,10 @@ namespace DataAccessLayer
         public int UserLogin(string userName, string password)
         {
             int nofRows = 0;
-            //try
-            //{
+            try
+            {
                 //int nofRows = 0;
-                string queryStr = "SELECT userName, password FROM TableUse WHERE userName = @userName and password = @pwd";
+                string queryStr = "SELECT userName, password FROM TableUser WHERE userName = @userName and password = @pwd";
 
                 SqlConnection conn = new SqlConnection(_connStr);
                 SqlCommand cmd = new SqlCommand(queryStr, conn);
@@ -147,13 +147,13 @@ namespace DataAccessLayer
                 dr.Dispose();
 
                 //return nofRows;
-            //}
+            }
+                return nofRows;
 
-            //catch(Exception ex)
-            //{
-            //    Console.WriteLine("Error! " + ex.Message);
-            //}
-            return nofRows;
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error! " + ex.Message);
+            }
             
         }
 
