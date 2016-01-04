@@ -99,7 +99,6 @@ namespace DataAccessLayer
             //string queryStr = "INSERT INTO TableUser (userName, password, email, fullName, contactNo) " +
             //                  " VALUES('111','bbb','ccc','ddd','eee')";
                              
-
                 SqlConnection conn = new SqlConnection(_connStr);
                 SqlCommand cmd = new SqlCommand(queryStr, conn);
 
@@ -116,6 +115,35 @@ namespace DataAccessLayer
             //{
             //    Console.WriteLine("Error message is: " + ex.Message);
             //}
+        }
+
+        public int UserLogin(string userName, string password)
+        {
+            int nofRows = 0;
+            string queryStr = "SELECT userName, password FROM TableUser WHERE userName = @userName and password = @pwd";
+
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            cmd.Parameters.AddWithValue("@userName", userName);
+            cmd.Parameters.AddWithValue("@pwd", password);
+
+            conn.Open();
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                userName = dr["userName"].ToString();
+                password = dr["password"].ToString();
+
+                nofRows = 1;
+            }
+
+            conn.Close();
+            dr.Close();
+            dr.Dispose();
+
+            return nofRows;
         }
 
         public int UserUpdate()

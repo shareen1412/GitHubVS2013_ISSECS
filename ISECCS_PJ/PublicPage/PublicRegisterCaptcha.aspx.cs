@@ -15,5 +15,10 @@ namespace ISECCS_PJ.PublicPage
         {
 
         }
+
+        protected void btn_back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PublicRegister.aspx");
+        }
     }
 }

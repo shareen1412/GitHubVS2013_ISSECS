@@ -12,9 +12,12 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="btn_register" runat="server" Height="41px" Text="Register" Width="100px" />
+                <asp:Button ID="btn_register" runat="server" Height="30px" Text="Register" Width="120px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btn_cancel" runat="server" Height="41px" Text="Cancel" Width="108px" />
+                <asp:Button ID="btn_cancel" runat="server" Height="30px" Text="Cancel" Width="120px" />
+                <br />
+                <br />
+                <asp:Button ID="btn_back" runat="server" OnClick="btn_back_Click" Text="Back" Width="120px" />
             </td>
         </tr>
     </table>

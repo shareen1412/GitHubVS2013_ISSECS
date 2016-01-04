@@ -16,5 +16,10 @@ namespace ISECCS_PJ.PublicPage
 
         }
 
+        protected void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_email.Text = "";
+        }
+
     }
 }

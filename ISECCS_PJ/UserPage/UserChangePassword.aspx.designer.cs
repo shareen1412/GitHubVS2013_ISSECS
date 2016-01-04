@@ -49,12 +49,12 @@ namespace ISECCS_PJ.UserPage {
         protected global::System.Web.UI.WebControls.Button btn_reset;
         
         /// <summary>
-        /// btn_cancel control.
+        /// btn_clear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancel;
+        protected global::System.Web.UI.WebControls.Button btn_clear;
     }
 }

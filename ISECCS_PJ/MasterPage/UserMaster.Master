@@ -96,9 +96,9 @@
                                 &nbsp;
                                 <asp:Label class="userName" ID="lbl_session" runat="server">[lbl_session]</asp:Label> &#9662;</a>
                             <ul class="dropdown-menu">  
-                                <li><a runat="server" href="~/UserPage/#">Change Password</a></li>
+                                <li><a runat="server" href="~/UserPage/UserChangePassword">Change Password</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UserPage/#">Log Out</a></li>
+                                <li><a runat="server" href="~/PublicPage/PublicLogin">Log Out</a></li>
                             </ul>
                         <%--</li>--%>
                     </ul>

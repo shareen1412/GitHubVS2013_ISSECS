@@ -19,7 +19,6 @@ namespace ISECCS_PJ.PublicPage
     public partial class PublicRegister : System.Web.UI.Page
     {
         UserBLL userbll = new UserBLL();
-        UserDAL userdal = new UserDAL();
 
         protected void Page_Load(object sender, EventArgs e)
         {

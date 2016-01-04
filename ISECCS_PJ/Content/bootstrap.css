@@ -63,6 +63,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
+    font-size: xx-large;
 }
 dfn {
   font-style: italic;
@@ -122,8 +123,7 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  font: inherit;
-  margin: 0;
+  margin: 0 61px 0 0;
 }
 button {
   overflow: visible;
@@ -1189,7 +1189,7 @@ h6,
 .h5,
 .h6 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.1;
   color: inherit;
 }
@@ -1269,7 +1269,8 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 39px;
+  font-size: xx-large;
+    text-decoration: underline;
 }
 h2,
 .h2 {

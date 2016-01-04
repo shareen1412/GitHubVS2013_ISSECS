@@ -15,17 +15,7 @@ namespace BusinessLogicLayer
 {
     public class UserBLL
     {
-        public string CreateUser1()
-        {
-            UserDAL user = new UserDAL();
-
-            string returnMessage = "User record saved successfully.";
-
-            return returnMessage;
-
-        }
-
-        //UserDAL user = new UserDAL();
+        UserDAL user = new UserDAL();
 
         public string CreateUser(string userName, string password, string confirmPassword, string email, string fullName, string contactNo)
         {
@@ -68,7 +58,31 @@ namespace BusinessLogicLayer
                 if (nofRows > 0)
                     returnMessage = "User record saved successfully.";
                 else
-                    returnMessage = "An error occurred. Please try again.";
+                    returnMessage = "Unable to save user record. Please try again.";
+            }
+            return returnMessage;
+        }
+
+        public string LoginUser(string userName, string password)
+        {
+            string returnMessage = "";
+
+            if (userName.Length == 0)
+                returnMessage += "Please enter your username.<br />";
+            if (password.Length == 0)
+                returnMessage += "Please enter your password.<br />";
+
+            if (returnMessage.Length == 0)
+            {
+                //proceed if no error
+
+                int nofRows = 0;
+                nofRows = user.UserLogin(userName, password);
+
+                if (nofRows > 0)
+                    returnMessage = "Login successful.";
+                if (nofRows <= 0)
+                    returnMessage = "Unable to login. Please try again.";
             }
             return returnMessage;
         }
@@ -97,7 +111,7 @@ namespace BusinessLogicLayer
                 if (nofRows > 0)
                     returnMessage = "User record updated successfully.";
                 else
-                    returnMessage = "An error occurred. Please try again.";
+                    returnMessage = "Unable to update user record. Please try again.";
             }
             return returnMessage;
         }

@@ -13,5 +13,12 @@ namespace ISECCS_PJ.UserPage
         {
 
         }
+
+        protected void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_oldpwd.Text = "";
+            tb_newpwd.Text = "";
+            tb_confirmnewpwd.Text = "";
+        }
     }
 }
