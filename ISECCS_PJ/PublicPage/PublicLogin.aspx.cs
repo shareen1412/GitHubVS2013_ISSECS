@@ -38,7 +38,7 @@ namespace ISECCS_PJ.PublicPage
 
                 Response.Redirect("~/UserPage/UserHome.aspx");
             }
-            else if (message == "Unable to login. Please try again.")
+            else if (message == "Invalid username/password. Please try again.")
                 lbl_msg.Text = message;
 
             
