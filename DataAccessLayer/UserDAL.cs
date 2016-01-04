@@ -120,30 +120,41 @@ namespace DataAccessLayer
         public int UserLogin(string userName, string password)
         {
             int nofRows = 0;
-            string queryStr = "SELECT userName, password FROM TableUser WHERE userName = @userName and password = @pwd";
-
-            SqlConnection conn = new SqlConnection(_connStr);
-            SqlCommand cmd = new SqlCommand(queryStr, conn);
-            cmd.Parameters.AddWithValue("@userName", userName);
-            cmd.Parameters.AddWithValue("@pwd", password);
-
-            conn.Open();
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
+            try
             {
-                userName = dr["userName"].ToString();
-                password = dr["password"].ToString();
+                //int nofRows = 0;
+                string queryStr = "SELECT userName, password FROM TableUser WHERE userName = @userName and password = @pwd";
 
-                nofRows = 1;
+                SqlConnection conn = new SqlConnection(_connStr);
+                SqlCommand cmd = new SqlCommand(queryStr, conn);
+                cmd.Parameters.AddWithValue("@userName", userName);
+                cmd.Parameters.AddWithValue("@pwd", password);
+
+                conn.Open();
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    userName = dr["userName"].ToString();
+                    password = dr["password"].ToString();
+
+                    nofRows = 1;
+                }
+
+                conn.Close();
+                dr.Close();
+                dr.Dispose();
+
+                //return nofRows;
             }
+                return nofRows;
 
-            conn.Close();
-            dr.Close();
-            dr.Dispose();
-
-            return nofRows;
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error! " + ex.Message);
+            }
+            
         }
 
         public int UserUpdate()
