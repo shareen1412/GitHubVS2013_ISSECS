@@ -82,7 +82,7 @@ namespace BusinessLogicLayer
                 if (nofRows > 0)
                     returnMessage = "Login successful.";
                 if (nofRows <= 0)
-                    returnMessage = "Unable to login. Please try again.";
+                    returnMessage = "Invalid username/password. Please try again.";
             }
             return returnMessage;
         }
