@@ -26,8 +26,8 @@ namespace DataAccessLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"E:\\NYP\\Year 3\\Sem 2\\IT3191 - ISECCS" +
-            "\\ISECCS\\ISECCS_PJ\\ISECCS_PJ\\App_Data\\ISECCS.mdf\";Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"E:\\NYP\\Year 3\\Sem 2\\GIT\\ISECCS_PJ\\A" +
+            "pp_Data\\ISECCS.mdf\";Integrated Security=True")]
         public string DBConnStr {
             get {
                 return ((string)(this["DBConnStr"]));
