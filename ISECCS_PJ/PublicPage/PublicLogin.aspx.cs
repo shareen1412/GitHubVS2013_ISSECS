@@ -25,21 +25,28 @@ namespace ISECCS_PJ.PublicPage
 
         protected void btn_login_Click(object sender, EventArgs e)
         {
-            string message = "";
-
-            message = userbll.LoginUser(tb_username.Text, tb_password.Text);
-
-            if (message == "Login successful.")
+            try
             {
-                lbl_msg.Text = "Successful Login.";
+                string message = "";
 
-                tb_username.Text = "";
-                tb_password.Text = "";
+                message = userbll.LoginUser(tb_username.Text, tb_password.Text);
 
-                Response.Redirect("~/UserPage/UserHome.aspx");
+                if (message == "Login successful.")
+                {
+                    lbl_msg.Text = "Successful Login.";
+
+                    tb_username.Text = "";
+                    tb_password.Text = "";
+
+                    Response.Redirect("~/UserPage/UserHome.aspx");
+                }
+                else if (message == "Invalid username/password. Please try again.")
+                    lbl_msg.Text = message;
             }
-            else if (message == "Unable to login. Please try again.")
-                lbl_msg.Text = message;
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('An error occurred. Please try again.')</script>");
+            }
 
             
         }
