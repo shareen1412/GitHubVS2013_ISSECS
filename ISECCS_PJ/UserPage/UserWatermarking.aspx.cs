@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Drawing;
 using DataAccessLayer;
+using System.Windows.Forms;
 
 namespace ISECCS_PJ.UserPage
 {
@@ -42,14 +43,30 @@ namespace ISECCS_PJ.UserPage
                     // 25% -> 63.75
                     int opacity = 64; // range from 0 to 255
 
+                    //int wmHeight = (int) img_userImage.Height.Value;
+                    //int wmWidth = (int) img_userImage.Width.Value;
+
+                    System.Drawing.Image img1 = System.Drawing.Image.FromStream(fu_fileName.PostedFile.InputStream);
+
+                    int wmHeight = img1.Height;
+                    int wmWidth = img1.Width;
+
+                    MessageBox.Show(wmHeight.ToString() + wmWidth.ToString());
+
+                    int xPosOfWm = 10;
+                    int yPosOfWm = 10;
+
+                    xPosOfWm = (wmHeight - xPosOfWm) / 2;
+                    xPosOfWm = (wmWidth  - xPosOfWm) - 10;
+
                     // Defining watermark properties
-                    SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, Color.Red));
+                    SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, Color.Green));
                     //SolidBrush brush = new SolidBrush(Color.FromArgb(ddl_transparency.SelectedIndex, Color.Red));
 
                     Font font = new Font("Arial", 16);
                     //Font font = new Font((ddl_fontType.SelectedItem).ToString(), ddl_fontSize.SelectedIndex);
 
-                    g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(100, 20));
+                    g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(xPosOfWm, yPosOfWm));
 
                     upImage.Save(Path.Combine(Server.MapPath("~/TempImages/"), fileName));
                     img_userImage.ImageUrl = "~/TempImages/" + "//" + fileName;
@@ -63,7 +80,7 @@ namespace ISECCS_PJ.UserPage
 
                 if (a != ".jpg" && a != ".png")
                 {
-                    Response.Write("<script>alert('Wrong file format!!')</script>");
+                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png fiels are accepted!')</script>");
                 }
 
                 else if (tb_watermarkText.Text == "")
