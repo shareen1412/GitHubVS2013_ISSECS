@@ -21,46 +21,34 @@ namespace ISECCS_PJ.UserPage
         {
             try
             {
-                // Here We will upload image with watermark text
+                // Here we will upload image with watermark text
                 string fileName = Guid.NewGuid() + Path.GetExtension(fu_fileName.PostedFile.FileName);
                 System.Drawing.Image upImage = System.Drawing.Image.FromStream(fu_fileName.PostedFile.InputStream);
-
-                //string a = Path.GetExtension(fileName);
-
-                //if (a != ".jpg" && a != ".png")
-                //{
-                //    Response.Write("<script>alert('Wrong file format')</script>");
-                //}
-
-                //if (tb_watermarkText.Text == "")
-                //{
-                //    Response.Write("<script>alert('Please enter your desired watermark')</script>");
-                //}
 
                 using (Graphics g = Graphics.FromImage(upImage))
                 {
                     // For Transparent Watermark Text 
                     // 25% -> 63.75
-                    int opacity = 64; // range from 0 to 255
+                    int opacity = 128; // range from 0 to 255
 
-                    //int wmHeight = (int) img_userImage.Height.Value;
-                    //int wmWidth = (int) img_userImage.Width.Value;
-
+                    // Get the width and height of the image
                     System.Drawing.Image img1 = System.Drawing.Image.FromStream(fu_fileName.PostedFile.InputStream);
 
                     int wmHeight = img1.Height;
                     int wmWidth = img1.Width;
 
-                    MessageBox.Show(wmHeight.ToString() + wmWidth.ToString());
+                    // Show the width and height of image in message box
+                    MessageBox.Show("Height: " + wmHeight.ToString() + " Width: " + wmWidth.ToString());
 
-                    int xPosOfWm = 10;
-                    int yPosOfWm = 10;
+                    //int xPosOfWm = 10;
+                    //int yPosOfWm = 10;
 
-                    xPosOfWm = (wmHeight - xPosOfWm) / 2;
-                    xPosOfWm = (wmWidth  - xPosOfWm) - 10;
+                    // Calcualte position of the text
+                    int xPosOfWm = 5;
+                    int yPosOfWm = wmHeight - 25;
 
                     // Defining watermark properties
-                    SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, Color.Green));
+                    SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, 44, 44, 44));
                     //SolidBrush brush = new SolidBrush(Color.FromArgb(ddl_transparency.SelectedIndex, Color.Red));
 
                     Font font = new Font("Arial", 16);
@@ -80,7 +68,7 @@ namespace ISECCS_PJ.UserPage
 
                 if (a != ".jpg" && a != ".png")
                 {
-                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png fiels are accepted!')</script>");
+                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png fiels are accepted.')</script>");
                 }
 
                 else if (tb_watermarkText.Text == "")

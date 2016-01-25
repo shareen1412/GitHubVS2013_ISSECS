@@ -152,6 +152,10 @@
       <DependentUpon>ISECCS.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\MainStyle.css" />
+    <Content Include="CSS\PublicContact.css" />
+    <Content Include="Images\1195444816475588749Gerald_G_Lady_Face_Cartoon.svg.hi.png" />
+    <Content Include="Images\calm-clipart-7iaReRo5T.png" />
+    <Content Include="Images\girl-face-cartoon-md.png" />
     <Content Include="Images\Unknown.gif" />
     <Content Include="PublicPage\PublicAbout.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
