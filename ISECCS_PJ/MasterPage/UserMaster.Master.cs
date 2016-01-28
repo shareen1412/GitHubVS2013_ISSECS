@@ -75,6 +75,13 @@ namespace ISECCS_PJ
         {
             Context.GetOwinContext().Authentication.SignOut();
         }
+
+        protected void lb_logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Session.Clear();
+            Response.Redirect("~/PublicPage/PublicHome");
+        }
     }
 
 }

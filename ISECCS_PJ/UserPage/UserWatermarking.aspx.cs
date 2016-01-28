@@ -29,7 +29,7 @@ namespace ISECCS_PJ.UserPage
                 {
                     // For Transparent Watermark Text 
                     // 25% -> 63.75
-                    int opacity = 128; // range from 0 to 255
+                    int opacity = 80; // range from 0 to 255
 
                     // Get the width and height of the image
                     System.Drawing.Image img1 = System.Drawing.Image.FromStream(fu_fileName.PostedFile.InputStream);
@@ -38,7 +38,7 @@ namespace ISECCS_PJ.UserPage
                     int wmWidth = img1.Width;
 
                     // Show the width and height of image in message box
-                    MessageBox.Show("Height: " + wmHeight.ToString() + " Width: " + wmWidth.ToString());
+                    //MessageBox.Show("Height: " + wmHeight.ToString() + " Width: " + wmWidth.ToString());
 
                     //int xPosOfWm = 10;
                     //int yPosOfWm = 10;
@@ -49,15 +49,15 @@ namespace ISECCS_PJ.UserPage
 
                     // Defining watermark properties
                     SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, 44, 44, 44));
-                    //SolidBrush brush = new SolidBrush(Color.FromArgb(ddl_transparency.SelectedIndex, Color.Red));
 
                     Font font = new Font("Arial", 16);
-                    //Font font = new Font((ddl_fontType.SelectedItem).ToString(), ddl_fontSize.SelectedIndex);
 
                     g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(xPosOfWm, yPosOfWm));
 
                     upImage.Save(Path.Combine(Server.MapPath("~/TempImages/"), fileName));
                     img_userImage.ImageUrl = "~/TempImages/" + "//" + fileName;
+
+                    tb_watermarkText.Text = "";
                 }
             }//try
             catch (Exception ex)
@@ -66,16 +66,20 @@ namespace ISECCS_PJ.UserPage
 
                 string a = Path.GetExtension(fileName);
 
-                if (a != ".jpg" && a != ".png")
+                if (fu_fileName.PostedFile.FileName == "")
                 {
-                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png fiels are accepted.')</script>");
+                    Response.Write("<script>alert('Please select a file!')</script>");
+                }
+
+                else if (a != ".jpg" && a != ".png")
+                {
+                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png files are accepted.')</script>");
                 }
 
                 else if (tb_watermarkText.Text == "")
                 {
                     Response.Write("<script>alert('Please enter your desired watermark text.')</script>");
                 }
-                //Response.Write("<script> alert('Error lah')</script>");
             }//catch
         }//bn_preview
 
@@ -102,8 +106,8 @@ namespace ISECCS_PJ.UserPage
 
         protected void bn_back_Click(object sender, EventArgs e)
         {
-            string path = Server.MapPath("~/TempImages/");
-            File.Delete(path);
+            //string path = Server.MapPath("~/TempImages/");
+            //File.Delete(path);
             Response.Redirect("~/UserPage/UserHome");
         }//bn_download
     }
