@@ -2,7 +2,7 @@
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
     <script src="../JavaScript/PreviewImage.js" type="text/javascript"></script>
-    <style type="text/css">
+<%--    <style type="text/css">
         .auto-style1 {
             width: 94px;
             height: 21px;
@@ -10,10 +10,7 @@
         .auto-style2 {
             height: 21px;
         }
-    </style>
-    <script type="text/javascript">
-
-    </script>
+    </style>--%>
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -21,25 +18,25 @@
         <tr>
             <td style="width: 94px">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="4">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="6">
                 <h3>Step 1: Upload Your File</h3>
                 &nbsp;</td>
         </tr>
         <tr>
             <td style="width: 94px; height: 30px;"></td>
-            <td colspan="2" style="height: 30px">
+            <td colspan="5" style="height: 30px">
                 <asp:FileUpload ID="fu_fileName" runat="server" onchange="readURL(this);"/>
             </td>
         </tr>
         <tr>
             <td style="width: 94px">&nbsp;</td>
-            <td colspan="2">&nbsp;</td>
+            <td colspan="5">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3" class="auto-style1">
+            <td colspan="6">
                 <h3>Step 2: Set Watermark Properties</h3>
                 &nbsp;</td>
         </tr>
@@ -48,7 +45,7 @@
             <td rowspan="13">
                 <asp:Image ID="img_userImage" runat="server"/>
             </td>
-            <td>Watermark Text:&nbsp; &nbsp;<asp:TextBox ID="tb_watermarkText" placeholder="Your text here" runat="server"></asp:TextBox></td>
+            <td rowspan="2" colspan="4">Watermark Text:&nbsp; &nbsp;<asp:TextBox ID="tb_watermarkText" placeholder="Your text here" runat="server"></asp:TextBox></td>
         </tr>
 <%--        <tr>
             <td style="width: 94px">&nbsp;</td>
@@ -96,11 +93,10 @@
         </tr>--%>
         <tr>
             <td style="width: 94px">&nbsp;</td>
-            <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 94px">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="4">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

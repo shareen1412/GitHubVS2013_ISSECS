@@ -278,8 +278,8 @@ namespace DataAccessLayer
         public int UserLogin(string userName, string password)
         {
             int nofRows = 0;
-            try
-            {
+            //try
+            //{
                 //int nofRows = 0;
                 string queryStr = "SELECT userName, password FROM TableUser2 WHERE userName = @userName and password = @pwd";
 
@@ -305,12 +305,12 @@ namespace DataAccessLayer
                 dr.Dispose();
 
                 //return nofRows;
-            }
+            //}
 
-            catch(Exception ex)
-            {
-                Console.WriteLine("Error! " + ex.Message);
-            }
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("Error! " + ex.Message);
+            //}
             return nofRows;
             
         }

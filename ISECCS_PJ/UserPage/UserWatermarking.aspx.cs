@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Drawing;
 using DataAccessLayer;
+using System.Windows.Forms;
 
 namespace ISECCS_PJ.UserPage
 {
@@ -20,36 +21,40 @@ namespace ISECCS_PJ.UserPage
         {
             try
             {
-                // Here We will upload image with watermark text
+                // Here we will upload image with watermark text
                 string fileName = Guid.NewGuid() + Path.GetExtension(fu_fileName.PostedFile.FileName);
                 System.Drawing.Image upImage = System.Drawing.Image.FromStream(fu_fileName.PostedFile.InputStream);
-
-                //string a = Path.GetExtension(fileName);
-
-                //if (a != ".jpg" && a != ".png")
-                //{
-                //    Response.Write("<script>alert('Wrong file format')</script>");
-                //}
-
-                //if (tb_watermarkText.Text == "")
-                //{
-                //    Response.Write("<script>alert('Please enter your desired watermark')</script>");
-                //}
 
                 using (Graphics g = Graphics.FromImage(upImage))
                 {
                     // For Transparent Watermark Text 
                     // 25% -> 63.75
-                    int opacity = 64; // range from 0 to 255
+                    int opacity = 128; // range from 0 to 255
+
+                    // Get the width and height of the image
+                    System.Drawing.Image img1 = System.Drawing.Image.FromStream(fu_fileName.PostedFile.InputStream);
+
+                    int wmHeight = img1.Height;
+                    int wmWidth = img1.Width;
+
+                    // Show the width and height of image in message box
+                    MessageBox.Show("Height: " + wmHeight.ToString() + " Width: " + wmWidth.ToString());
+
+                    //int xPosOfWm = 10;
+                    //int yPosOfWm = 10;
+
+                    // Calcualte position of the text
+                    int xPosOfWm = 5;
+                    int yPosOfWm = wmHeight - 25;
 
                     // Defining watermark properties
-                    SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, Color.Red));
+                    SolidBrush brush = new SolidBrush(Color.FromArgb(opacity, 44, 44, 44));
                     //SolidBrush brush = new SolidBrush(Color.FromArgb(ddl_transparency.SelectedIndex, Color.Red));
 
                     Font font = new Font("Arial", 16);
                     //Font font = new Font((ddl_fontType.SelectedItem).ToString(), ddl_fontSize.SelectedIndex);
 
-                    g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(100, 20));
+                    g.DrawString(tb_watermarkText.Text.Trim(), font, brush, new PointF(xPosOfWm, yPosOfWm));
 
                     upImage.Save(Path.Combine(Server.MapPath("~/TempImages/"), fileName));
                     img_userImage.ImageUrl = "~/TempImages/" + "//" + fileName;
@@ -63,7 +68,7 @@ namespace ISECCS_PJ.UserPage
 
                 if (a != ".jpg" && a != ".png")
                 {
-                    Response.Write("<script>alert('Wrong file format!!')</script>");
+                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png fiels are accepted.')</script>");
                 }
 
                 else if (tb_watermarkText.Text == "")
