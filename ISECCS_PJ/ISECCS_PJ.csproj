@@ -43,6 +43,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SRVTextToImage">
+      <HintPath>..\..\SRVTextToImage.dll\SRVTextToImage.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -157,6 +160,7 @@
     <Content Include="Images\calm-clipart-7iaReRo5T.png" />
     <Content Include="Images\girl-face-cartoon-md.png" />
     <Content Include="Images\Unknown.gif" />
+    <Content Include="PublicPage\CaptchaImage.aspx" />
     <Content Include="PublicPage\PublicAbout.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -191,10 +195,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="MasterPage\UserMaster.Master" />
     <Content Include="MasterPage\UserMaster.Mobile.Master" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="PublicPage\PublicLogin.aspx" />
     <Content Include="PublicPage\PublicRegister.aspx" />
-    <Content Include="PublicPage\PublicRegisterCaptcha.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -366,6 +373,18 @@
     <Compile Include="MasterPage\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PublicPage\CaptchaImage.aspx.cs">
+      <DependentUpon>CaptchaImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicPage\CaptchaImage.aspx.designer.cs">
+      <DependentUpon>CaptchaImage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PublicPage\PublicAbout.aspx.cs">
       <DependentUpon>PublicAbout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,13 +448,6 @@
     </Compile>
     <Compile Include="PublicPage\PublicRegister.aspx.designer.cs">
       <DependentUpon>PublicRegister.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.cs">
-      <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PublicPage\PublicRegisterCaptcha.aspx.designer.cs">
-      <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="UserPage\Steganography.aspx.cs">

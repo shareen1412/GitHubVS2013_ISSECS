@@ -33,6 +33,9 @@
                 <br />
                 <br />
                 <asp:Label ID="lbl_msg" runat="server" ForeColor="Red"></asp:Label>
+                <br />
+                <asp:Label ID="lblMsg2" runat="server" ForeColor="#CC0000"></asp:Label>
+                <br />
             </td>
         </tr>
         <tr>

@@ -68,7 +68,16 @@ namespace ISECCS_PJ
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //string userName = Session["userName"].ToString();
+            lbl_session.Text = Session["UserName"].ToString();
+            //lbl_session2.Text = Session["UserName"].ToString();
+        }
 
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            //FormsAuthentication.SignOut();
+            Response.Redirect("~/PublicPage/PublicLogin.aspx");
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

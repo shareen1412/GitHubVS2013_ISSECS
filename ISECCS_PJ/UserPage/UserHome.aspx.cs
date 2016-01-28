@@ -11,7 +11,8 @@ namespace ISECCS_PJ.UserPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lbl_session2.Text = Session["UserName"].ToString();
+            
         }
     }
 }
