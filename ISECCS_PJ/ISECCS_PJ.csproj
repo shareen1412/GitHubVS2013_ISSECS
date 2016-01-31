@@ -224,6 +224,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
+    <Content Include="UserPage\Cryptography.aspx" />
     <Content Include="UserPage\Steganography.aspx" />
     <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
@@ -434,6 +435,13 @@
       <DependentUpon>PublicRegisterCaptcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserPage\Cryptography.aspx.cs">
+      <DependentUpon>Cryptography.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Cryptography.aspx.designer.cs">
+      <DependentUpon>Cryptography.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Steganography.aspx.cs">
       <DependentUpon>Steganography.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
