@@ -9,7 +9,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Under Construction</title>
+    <title><%: Page.Title %></title>
     <style type="text/css">
         ul#dropdown {
             min-width: 125px; /* Set width of the dropdown */
@@ -33,7 +33,7 @@
         }
 
         #img_pic {
-            /*border-radius:50%;*/
+            border-radius:50%;
         }
     </style>
     <asp:PlaceHolder runat="server">
@@ -89,8 +89,8 @@
                         <li><a runat="server" href="~/UserPage/#">Steganography</a></li>
                         <li><a runat="server" href="~/UserPage/UserWatermarking">Watermarking</a></li>
                     </ul>
-                    <ul class="nav navbar-nav">
-                        <li style="margin-right: 200px;">
+                    <ul class="nav navbar-nav" style="float:right;">
+                        <li style="float: right;">
                             <a id="de" class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <asp:Image class="img-circle" ID="img_pic" runat="server" ImageUrl="~/Images/Unknown.gif" Width="20px" Height="20px" />
                                 &nbsp;
@@ -98,9 +98,9 @@
                             <ul class="dropdown-menu">  
                                 <li><a runat="server" href="~/UserPage/UserChangePassword">Change Password</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/PublicPage/PublicLogin">Log Out</a></li>
+                                <li><asp:LinkButton ID="lb_logout" runat="server" OnClick="lb_logout_Click">Logout</asp:LinkButton></li>
                             </ul>
-                        <%--</li>--%>
+                        </li>
                     </ul>
                 </div>
             </div>

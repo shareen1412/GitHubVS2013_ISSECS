@@ -18,25 +18,25 @@
         <tr>
             <td style="width: 94px">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="4">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="6">
                 <h3>Step 1: Upload Your File</h3>
                 &nbsp;</td>
         </tr>
         <tr>
             <td style="width: 94px; height: 30px;"></td>
-            <td colspan="2" style="height: 30px">
+            <td colspan="5" style="height: 30px">
                 <asp:FileUpload ID="fu_fileName" runat="server" onchange="readURL(this);"/>
             </td>
         </tr>
         <tr>
             <td style="width: 94px">&nbsp;</td>
-            <td colspan="2">&nbsp;</td>
+            <td colspan="5">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="6">
                 <h3>Step 2: Set Watermark Properties</h3>
                 &nbsp;</td>
         </tr>
@@ -45,7 +45,7 @@
             <td rowspan="13">
                 <asp:Image ID="img_userImage" runat="server"/>
             </td>
-            <td rowspan="2">Watermark Text:&nbsp; &nbsp;<asp:TextBox ID="tb_watermarkText" placeholder="Your text here" runat="server"></asp:TextBox></td>
+            <td rowspan="2" colspan="4">Watermark Text:&nbsp; &nbsp;<asp:TextBox ID="tb_watermarkText" placeholder="Your text here" runat="server"></asp:TextBox></td>
         </tr>
 <%--        <tr>
             <td style="width: 94px">&nbsp;</td>
@@ -96,7 +96,7 @@
         </tr>
         <tr>
             <td style="width: 94px">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="4">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

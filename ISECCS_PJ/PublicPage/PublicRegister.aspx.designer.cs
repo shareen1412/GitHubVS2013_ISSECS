@@ -67,22 +67,22 @@ namespace ISECCS_PJ.PublicPage {
         protected global::System.Web.UI.WebControls.TextBox tb_contact;
         
         /// <summary>
-        /// btn_next control.
+        /// imgCatpcha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_next;
+        protected global::System.Web.UI.WebControls.Image imgCatpcha;
         
         /// <summary>
-        /// btn_clear control.
+        /// txtCaptchaText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_clear;
+        protected global::System.Web.UI.WebControls.TextBox txtCaptchaText;
         
         /// <summary>
         /// btn_register control.
@@ -94,6 +94,15 @@ namespace ISECCS_PJ.PublicPage {
         protected global::System.Web.UI.WebControls.Button btn_register;
         
         /// <summary>
+        /// btn_clear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_clear;
+        
+        /// <summary>
         /// lbl_msg control.
         /// </summary>
         /// <remarks>
@@ -101,5 +110,32 @@ namespace ISECCS_PJ.PublicPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_msg;
+        
+        /// <summary>
+        /// lbl_msg2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_msg2;
+        
+        /// <summary>
+        /// lblPasswordStrength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPasswordStrength;
+        
+        /// <summary>
+        /// btn_sendemail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_sendemail;
     }
 }

@@ -45,20 +45,24 @@ namespace BusinessLogicLayer
             if (fullName.Length == 0)
                 returnMessage += "Please enter your name.<br />";
             if (contactNo.Length != 8)
-                returnMessage += "Contact Number needs to be 8 integers!<br />";
+                returnMessage += "Contact Number needs to be 8 digits!<br />";
 
             if (returnMessage.Length == 0)
             {
                 //No error; proceed
                 UserDAL userdal = new UserDAL(userName, password, email, fullName, contactNo);
 
-                int nofRows = 0;
-                nofRows = userdal.UserInsert();
+                //int nofRows = 0;
+                //nofRows = userdal.UserInsert();
 
-                if (nofRows > 0)
-                    returnMessage = "User record saved successfully.";
-                else
-                    returnMessage = "Unable to save user record. Please try again.";
+                //if (nofRows > 0)
+                //    returnMessage = "User record saved successfully.";
+                //else
+                //    returnMessage = "Unable to save user record. Please try again.";
+
+                userdal.UserInsert();
+
+                returnMessage = "User record saved successfully.";
             }
             return returnMessage;
         }
@@ -76,13 +80,18 @@ namespace BusinessLogicLayer
             {
                 //proceed if no error
 
-                int nofRows = 0;
-                nofRows = user.UserLogin(userName, password);
+                //int nofrows = 0;
+                //nofrows = user.UserLogin(userName, password);
 
-                if (nofRows > 0)
-                    returnMessage = "Login successful.";
-                if (nofRows <= 0)
-                    returnMessage = "Invalid username/password. Please try again.";
+                //if (nofrows > 0)
+                //    returnMessage = "login successful.";
+                //if (nofrows <= 0)
+                //    returnMessage = "invalid username/password. please try again.";
+
+                //UserDAL userdal = new UserDAL();
+                user.LoginWithPasswordHashFunction();
+               
+
             }
             return returnMessage;
         }
@@ -115,6 +124,7 @@ namespace BusinessLogicLayer
             }
             return returnMessage;
         }
+
 
         
 
