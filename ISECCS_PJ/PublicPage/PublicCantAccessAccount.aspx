@@ -30,6 +30,11 @@
                             <asp:Label ID="lbl_msg" runat="server" ForeColor="#CC0000"></asp:Label>
                         </td>
                     </tr>
+                    <tr>
+                        <td style="width: 162px">&nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
                 </table>
             </td>
         </tr>

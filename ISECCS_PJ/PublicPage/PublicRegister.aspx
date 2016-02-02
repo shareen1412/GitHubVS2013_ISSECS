@@ -131,8 +131,6 @@
                 <br />
                 <asp:Label ID="lblPasswordStrength" runat="server" ForeColor="#CC0000"></asp:Label>
                 <br />
-                <br />
-                <asp:Button ID="btn_sendemail" runat="server" OnClick="btn_sendemail_Click" Text="Send Email" />
             </td>
         </tr>
     </table>

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BusinessLogicLayer;
 using DataAccessLayer;
 
+using System.Text;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
@@ -34,6 +35,7 @@ namespace ISECCS_PJ.PublicPage
             SendEmail();
         }
 
+        //Send email for forget password
         public void SendEmail()
         {
             if (lbl_msg.Text == "success")
@@ -61,6 +63,33 @@ namespace ISECCS_PJ.PublicPage
             {
                 lbl_msg.Text = "Not successful";
             }
+        }
+
+        public void SendPasswordResetEmail(string ToEmail, string UserName, string UniqueId)
+        {
+            MailMessage mailMessage = new MailMessage("suju4eva060396@gmail.com", ToEmail);
+
+            StringBuilder sbEmailBody = new StringBuilder();
+            sbEmailBody.Append("Dear " + UserName + ",<br/><br/>");
+            sbEmailBody.Append("Please click on the following link to reset your password");
+            sbEmailBody.Append("<br/>");
+            sbEmailBody.Append("http://localhost:1398/UserPage/UserChangePassword" + UniqueId);
+            sbEmailBody.Append("<br/><br/>");
+            sbEmailBody.Append("Visual Studios");
+
+            mailMessage.IsBodyHtml = true;
+            mailMessage.Subject = "Reset Your Password";
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+
+            smtpClient.Credentials = new System.Net.NetworkCredential()
+            {
+                UserName = "suju4eva060396@gmail.com",
+                Password = "0"
+            };
+
+            smtpClient.EnableSsl = true;
+            smtpClient.Send(mailMessage);
+
         }
 
     }

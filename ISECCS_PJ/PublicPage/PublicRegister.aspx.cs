@@ -250,6 +250,8 @@ namespace ISECCS_PJ.PublicPage
 
         }
 
+        
+
         //protected void btnSave_Click(object sender, EventArgs e)
         //{
         //    //Validating captcha
@@ -307,32 +309,32 @@ namespace ISECCS_PJ.PublicPage
         //    }
         //}
 
-        protected void btn_sendemail_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpC = new SmtpClient("smtp.gmail.com");
-                //From address to send email
-                mail.From = new MailAddress("suju4eva060396@gmail.com");
-                //To address to send email
-                mail.To.Add("suju4eva060396@gmail.com");
-                mail.Body = "This is a test mail from C# program";
-                mail.Subject = "TEST";
-                smtpC.Port = 587;
-                //Credentials for From address
-                smtpC.Credentials = new System.Net.NetworkCredential("EmailID", "password");
-                smtpC.EnableSsl = true;
-                smtpC.Send(mail);
-                Console.WriteLine("Message sent successfully");
-                Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.GetBaseException());
-                Console.ReadLine();
-            }
-        }
+        //protected void btn_sendemail_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        MailMessage mail = new MailMessage();
+        //        SmtpClient smtpC = new SmtpClient("smtp.gmail.com");
+        //        //From address to send email
+        //        mail.From = new MailAddress("suju4eva060396@gmail.com");
+        //        //To address to send email
+        //        mail.To.Add("suju4eva060396@gmail.com");
+        //        mail.Body = "This is a test mail from C# program";
+        //        mail.Subject = "TEST";
+        //        smtpC.Port = 587;
+        //        //Credentials for From address
+        //        smtpC.Credentials = new System.Net.NetworkCredential("EmailID", "password");
+        //        smtpC.EnableSsl = true;
+        //        smtpC.Send(mail);
+        //        Console.WriteLine("Message sent successfully");
+        //        Console.ReadLine();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.GetBaseException());
+        //        Console.ReadLine();
+        //    }
+        //}
         
 
         ////To validate captcha
