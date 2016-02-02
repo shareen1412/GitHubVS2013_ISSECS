@@ -9,16 +9,21 @@ using System.Drawing;
 using DataAccessLayer;
 using System.Windows.Forms;
 
+using System.Web.Providers.Entities;
+using BusinessLogicLayer;
+
 namespace ISECCS_PJ.UserPage
 {
     public partial class UserWatermarking : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }//page_load
 
         protected void bn_preview_Click(object sender, EventArgs e)
         {
+
             try
             {
                 // Here we will upload image with watermark text
@@ -102,13 +107,20 @@ namespace ISECCS_PJ.UserPage
             {
 
             }
-        }
+        }//bn_download
 
         protected void bn_back_Click(object sender, EventArgs e)
         {
             //string path = Server.MapPath("~/TempImages/");
             //File.Delete(path);
             Response.Redirect("~/UserPage/UserHome");
-        }//bn_download
+        }//bn_back
+
+        protected void bn_upload_Click(object sender, EventArgs e)
+        {
+            string fileName = img_userImage.ImageUrl;
+
+            //watermarkBLL.UploadFile(fileName, Session["UserName"].ToString());
+        }//bn_upload
     }
 }

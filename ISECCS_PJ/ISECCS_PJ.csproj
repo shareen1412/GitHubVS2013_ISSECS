@@ -155,8 +155,12 @@
       <DependentUpon>ISECCS.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\MainStyle.css" />
+    <Content Include="CSS\PublicAbout.css" />
     <Content Include="CSS\PublicContact.css" />
+    <Content Include="CSS\RegisterLogin.css" />
+    <Content Include="CSS\UserWatermark.css" />
     <Content Include="Images\1195444816475588749Gerald_G_Lady_Face_Cartoon.svg.hi.png" />
+    <Content Include="Images\974c9ec6-2412-4899-b49a-b7d4b686c31a.jpg" />
     <Content Include="Images\calm-clipart-7iaReRo5T.png" />
     <Content Include="Images\girl-face-cartoon-md.png" />
     <Content Include="Images\Unknown.gif" />
@@ -235,6 +239,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
+    <Content Include="SRVTextToImage.dll" />
     <Content Include="UserPage\Steganography.aspx" />
     <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
@@ -491,7 +496,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
-      <Project>{c2b02882-068b-43e4-9975-c2bda4a72912}</Project>
+      <Project>{cef97731-4776-4854-8eaa-3b140c1b71ee}</Project>
       <Name>BusinessLogicLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">

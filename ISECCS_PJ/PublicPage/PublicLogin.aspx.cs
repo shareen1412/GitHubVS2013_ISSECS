@@ -30,6 +30,8 @@ namespace ISECCS_PJ.PublicPage
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["UserName"] = tb_username.Text;
+
+            tb_username.Focus();
         }
 
         protected void lbtn_cantaccessaccount_Click(object sender, EventArgs e)

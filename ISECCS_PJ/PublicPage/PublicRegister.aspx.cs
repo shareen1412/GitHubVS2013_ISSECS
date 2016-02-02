@@ -27,7 +27,7 @@ namespace ISECCS_PJ.PublicPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            tb_username.Focus();
         }
 
         //protected void btn_next_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace ISECCS_PJ.PublicPage
 
         protected void btn_register_Click(object sender, EventArgs e)
         {
-            if (checkAgainstSQLinjection(tb_username.Text) == true && checkAgainstSQLinjection(tb_name.Text) && checkAgainstSQLinjection(tb_email.Text) && checkAgainstSQLinjection(tb_contact.Text)) 
+            if (checkAgainstSQLinjection(tb_username.Text) == true && checkAgainstSQLinjection(tb_name.Text) == true && checkAgainstSQLinjection(tb_contact.Text) == true) 
             {
                 string message = "";
 
@@ -217,7 +217,7 @@ namespace ISECCS_PJ.PublicPage
         {
             int Marks = 0;
             //check password strength
-            if (password.Length < 6)
+            if (password.Length < 8)
             {
                 //very weak
                 return 1;
