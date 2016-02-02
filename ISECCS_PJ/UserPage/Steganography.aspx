@@ -15,14 +15,14 @@
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 340px">
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <asp:FileUpload ID="fu_steg" runat="server" />
                     </td>
                     <td>
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="modal-sm" style="width: 340px">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 340px">Password (may be blank):</td>
@@ -31,6 +31,19 @@
                 <tr>
                     <td class="modal-sm" style="width: 340px">
                         <asp:TextBox ID="tb_pw" runat="server" Width="320px"></asp:TextBox></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="modal-sm" style="width: 340px">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="modal-sm" style="width: 340px">Enter text to hide:</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="modal-sm" style="width: 340px">
+                        <asp:TextBox ID="tb_msg" runat="server" Width="320px"></asp:TextBox></td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -66,3 +79,15 @@
         </div>
     </div>
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+    <style type="text/css">
+        .auto-style1 {
+            width: 340px;
+            height: 28px;
+        }
+        .auto-style2 {
+            height: 28px;
+        }
+    </style>
+</asp:Content>
+

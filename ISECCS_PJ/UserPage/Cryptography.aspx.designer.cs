@@ -10,34 +10,25 @@
 namespace ISECCS_PJ.UserPage {
     
     
-    public partial class Steganography {
+    public partial class Cryptography {
         
         /// <summary>
-        /// btn_en control.
+        /// fileUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_en;
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
         
         /// <summary>
-        /// btn_de control.
+        /// txtPlain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_de;
-        
-        /// <summary>
-        /// fu_steg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_steg;
+        protected global::System.Web.UI.WebControls.TextBox txtPlain;
         
         /// <summary>
         /// tb_pw control.
@@ -49,30 +40,48 @@ namespace ISECCS_PJ.UserPage {
         protected global::System.Web.UI.WebControls.TextBox tb_pw;
         
         /// <summary>
-        /// tb_msg control.
+        /// txtPlain0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_msg;
+        protected global::System.Web.UI.WebControls.TextBox txtPlain0;
         
         /// <summary>
-        /// rbl_output control.
+        /// cb_watermark control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_output;
+        protected global::System.Web.UI.WebControls.CheckBox cb_watermark;
         
         /// <summary>
-        /// btn_submit control.
+        /// txtCipher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
+        protected global::System.Web.UI.WebControls.TextBox txtCipher;
+        
+        /// <summary>
+        /// btn_encrypt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_encrypt;
+        
+        /// <summary>
+        /// btn_decrypt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_decrypt;
     }
 }
