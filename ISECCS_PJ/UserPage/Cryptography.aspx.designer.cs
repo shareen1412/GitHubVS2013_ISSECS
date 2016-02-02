@@ -10,69 +10,78 @@
 namespace ISECCS_PJ.UserPage {
     
     
-    public partial class UserChangePassword {
+    public partial class Cryptography {
         
         /// <summary>
-        /// tb_oldpwd control.
+        /// fileUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_oldpwd;
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
         
         /// <summary>
-        /// tb_newpwd control.
+        /// txtPlain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_newpwd;
+        protected global::System.Web.UI.WebControls.TextBox txtPlain;
         
         /// <summary>
-        /// tb_confirmnewpwd control.
+        /// tb_pw control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_confirmnewpwd;
+        protected global::System.Web.UI.WebControls.TextBox tb_pw;
         
         /// <summary>
-        /// btn_reset control.
+        /// txtPlain0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_reset;
+        protected global::System.Web.UI.WebControls.TextBox txtPlain0;
         
         /// <summary>
-        /// btn_clear control.
+        /// cb_watermark control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_clear;
+        protected global::System.Web.UI.WebControls.CheckBox cb_watermark;
         
         /// <summary>
-        /// lbl_msg control.
+        /// txtCipher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_msg;
+        protected global::System.Web.UI.WebControls.TextBox txtCipher;
         
         /// <summary>
-        /// lbl_msg2 control.
+        /// btn_encrypt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_msg2;
+        protected global::System.Web.UI.WebControls.Button btn_encrypt;
+        
+        /// <summary>
+        /// btn_decrypt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_decrypt;
     }
 }

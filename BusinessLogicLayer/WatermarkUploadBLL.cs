@@ -10,13 +10,12 @@ namespace BusinessLogicLayer
 {
     public class WatermarkUploadBLL
     {
-        WatermarkUploadDAL wuDAL = new WatermarkUploadDAL();
 
         public string UploadFile(string userName, string file)
         {
             string message = "";
 
-            wuDAL.UploadImage();
+            //wuDAL.UploadImage();
 
             return message;
         }

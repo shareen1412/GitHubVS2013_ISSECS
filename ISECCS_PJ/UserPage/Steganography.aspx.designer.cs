@@ -31,13 +31,13 @@ namespace ISECCS_PJ.UserPage {
         protected global::System.Web.UI.WebControls.LinkButton btn_de;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// fu_steg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload fu_steg;
         
         /// <summary>
         /// tb_pw control.
@@ -47,6 +47,15 @@ namespace ISECCS_PJ.UserPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_pw;
+        
+        /// <summary>
+        /// tb_msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_msg;
         
         /// <summary>
         /// rbl_output control.

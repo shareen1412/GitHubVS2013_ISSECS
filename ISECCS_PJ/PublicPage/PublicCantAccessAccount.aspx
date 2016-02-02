@@ -19,10 +19,21 @@
                     <tr>
                         <td style="width: 162px">&nbsp;</td>
                         <td>
-                <asp:Button ID="btn_sendemail" runat="server" Text="Send Email" Width="120px"/>
+                <asp:Button ID="btn_sendemail" runat="server" Text="Send Email" Width="120px" OnClick="btn_sendemail_Click"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btn_clear" runat="server" Text="Clear" Width="120px" OnClick="btn_clear_Click" />
                         </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 162px">&nbsp;</td>
+                        <td>
+                            <asp:Label ID="lbl_msg" runat="server" ForeColor="#CC0000"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 162px">&nbsp;</td>
+                        <td>
+                            &nbsp;</td>
                     </tr>
                 </table>
             </td>

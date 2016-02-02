@@ -160,7 +160,6 @@
     <Content Include="CSS\RegisterLogin.css" />
     <Content Include="CSS\UserWatermark.css" />
     <Content Include="Images\1195444816475588749Gerald_G_Lady_Face_Cartoon.svg.hi.png" />
-    <Content Include="Images\974c9ec6-2412-4899-b49a-b7d4b686c31a.jpg" />
     <Content Include="Images\calm-clipart-7iaReRo5T.png" />
     <Content Include="Images\girl-face-cartoon-md.png" />
     <Content Include="Images\Unknown.gif" />
@@ -239,7 +238,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
-    <Content Include="SRVTextToImage.dll" />
+    <Content Include="UserPage\Cryptography.aspx" />
     <Content Include="UserPage\Steganography.aspx" />
     <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
@@ -455,6 +454,13 @@
       <DependentUpon>PublicRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserPage\Cryptography.aspx.cs">
+      <DependentUpon>Cryptography.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Cryptography.aspx.designer.cs">
+      <DependentUpon>Cryptography.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Steganography.aspx.cs">
       <DependentUpon>Steganography.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -496,7 +502,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
-      <Project>{cef97731-4776-4854-8eaa-3b140c1b71ee}</Project>
+      <Project>{c2b02882-068b-43e4-9975-c2bda4a72912}</Project>
       <Name>BusinessLogicLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
