@@ -37,7 +37,7 @@ namespace ISECCS_PJ.PublicPage
 
         protected void btn_register_Click(object sender, EventArgs e)
         {
-            if (checkAgainstSQLinjection(tb_username.Text) == true && checkAgainstSQLinjection(tb_name.Text) && checkAgainstSQLinjection(tb_email.Text) && checkAgainstSQLinjection(tb_contact.Text)) 
+            if (checkAgainstSQLinjection(tb_username.Text) == true && checkAgainstSQLinjection(tb_name.Text) && checkAgainstSQLinjection(tb_contact.Text))
             {
                 string message = "";
 
@@ -67,16 +67,16 @@ namespace ISECCS_PJ.PublicPage
                         break;
                 }
 
-            //lblPasswordStrength.Text = "Status : " + status;
-            //if (marks < 4)
-            //{
-            //    lblPasswordStrength.ForeColor = Color.Red;
-            //    return;
-            //}
-            //else
-            //{
-            //    lblPasswordStrength.ForeColor = Color.Green;
-            //}
+                //lblPasswordStrength.Text = "Status : " + status;
+                //if (marks < 4)
+                //{
+                //    lblPasswordStrength.ForeColor = Color.Red;
+                //    return;
+                //}
+                //else
+                //{
+                //    lblPasswordStrength.ForeColor = Color.Green;
+                //}
 
                 //Validating captcha
                 bool isCaptchaValid = false;
@@ -116,7 +116,7 @@ namespace ISECCS_PJ.PublicPage
                             lblPasswordStrength.ForeColor = Color.Red;
                         }
 
-                    
+
                     }
                     else
                     {
@@ -126,7 +126,7 @@ namespace ISECCS_PJ.PublicPage
                         lblPasswordStrength.Text = "Password strength: " + status + ". Please try again.";
                         lblPasswordStrength.ForeColor = Color.Red;
                     }
-                
+
                 }
                 else
                 {
@@ -139,15 +139,15 @@ namespace ISECCS_PJ.PublicPage
             }
             else
             {
-                lbl_msg.Text = "Please don't insert any Cross site scripting.";
+                lbl_msg.Text = "Please do not include special characters except in password and email field. Please try again.";
             }
-                
+
         }
 
         //To prevent SQL injection by checking aganist values.
         private bool checkAgainstSQLinjection(string userName)
         {
-            var regExpression = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]*$");
+            var regExpression = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]* $");
             if (regExpression.IsMatch(userName))
             {
                 return true;
@@ -211,7 +211,7 @@ namespace ISECCS_PJ.PublicPage
         //    }
 
         //}
-        
+
         //Password strength = very weak,weak, medium, strong and very strong.
         private int GetPasswordStrength(string password)
         {
@@ -249,6 +249,8 @@ namespace ISECCS_PJ.PublicPage
             return Marks;
 
         }
+
+
 
         //protected void btnSave_Click(object sender, EventArgs e)
         //{
@@ -307,33 +309,33 @@ namespace ISECCS_PJ.PublicPage
         //    }
         //}
 
-        protected void btn_sendemail_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpC = new SmtpClient("smtp.gmail.com");
-                //From address to send email
-                mail.From = new MailAddress("suju4eva060396@gmail.com");
-                //To address to send email
-                mail.To.Add("suju4eva060396@gmail.com");
-                mail.Body = "This is a test mail from C# program";
-                mail.Subject = "TEST";
-                smtpC.Port = 587;
-                //Credentials for From address
-                smtpC.Credentials = new System.Net.NetworkCredential("EmailID", "password");
-                smtpC.EnableSsl = true;
-                smtpC.Send(mail);
-                Console.WriteLine("Message sent successfully");
-                Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.GetBaseException());
-                Console.ReadLine();
-            }
-        }
-        
+        //protected void btn_sendemail_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        MailMessage mail = new MailMessage();
+        //        SmtpClient smtpC = new SmtpClient("smtp.gmail.com");
+        //        //From address to send email
+        //        mail.From = new MailAddress("suju4eva060396@gmail.com");
+        //        //To address to send email
+        //        mail.To.Add("suju4eva060396@gmail.com");
+        //        mail.Body = "This is a test mail from C# program";
+        //        mail.Subject = "TEST";
+        //        smtpC.Port = 587;
+        //        //Credentials for From address
+        //        smtpC.Credentials = new System.Net.NetworkCredential("EmailID", "password");
+        //        smtpC.EnableSsl = true;
+        //        smtpC.Send(mail);
+        //        Console.WriteLine("Message sent successfully");
+        //        Console.ReadLine();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.GetBaseException());
+        //        Console.ReadLine();
+        //    }
+        //}
+
 
         ////To validate captcha
         //protected void btn_submitcaptcha_Click(object sender, EventArgs e)

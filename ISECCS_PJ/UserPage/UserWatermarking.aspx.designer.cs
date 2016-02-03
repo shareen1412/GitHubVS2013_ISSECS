@@ -13,6 +13,15 @@ namespace ISECCS_PJ.UserPage {
     public partial class UserWatermarking {
         
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+        
+        /// <summary>
         /// fu_fileName control.
         /// </summary>
         /// <remarks>
@@ -65,14 +74,5 @@ namespace ISECCS_PJ.UserPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button bn_download;
-        
-        /// <summary>
-        /// bn_back control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bn_back;
     }
 }

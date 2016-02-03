@@ -155,7 +155,11 @@
       <DependentUpon>ISECCS.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\MainStyle.css" />
+    <Content Include="CSS\PublicAbout.css" />
     <Content Include="CSS\PublicContact.css" />
+    <Content Include="CSS\RegisterLogin.css" />
+    <Content Include="CSS\UserHome.css" />
+    <Content Include="CSS\UserWatermark.css" />
     <Content Include="Images\1195444816475588749Gerald_G_Lady_Face_Cartoon.svg.hi.png" />
     <Content Include="Images\calm-clipart-7iaReRo5T.png" />
     <Content Include="Images\girl-face-cartoon-md.png" />
@@ -244,6 +248,7 @@
     <Content Include="UserPage\Steganography_De.aspx" />
     <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
+    <Content Include="UserPage\UserResetPassword.aspx" />
     <Content Include="UserPage\UserWatermarking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -511,6 +516,13 @@
     </Compile>
     <Compile Include="UserPage\UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserResetPassword.aspx.cs">
+      <DependentUpon>UserResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UserResetPassword.aspx.designer.cs">
+      <DependentUpon>UserResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserWatermarking.aspx.cs">
       <DependentUpon>UserWatermarking.aspx</DependentUpon>

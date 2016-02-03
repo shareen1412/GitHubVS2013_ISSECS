@@ -68,9 +68,20 @@ namespace ISECCS_PJ
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string userName = Session["userName"].ToString();
-            lbl_session.Text = Session["UserName"].ToString();
-            //lbl_session2.Text = Session["UserName"].ToString();
+            try
+            {
+                lbl_session.Text = Session["UserName"].ToString();
+            }
+            catch
+            {
+                //Response.Write("<script>alert('Pease login again!')</script>")
+                ;
+                // Prevent user from goign back to UserHome page
+                Response.Redirect("~/PublicPage/PublicHome");
+                Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.Cache.SetNoStore();
+            }
         }
 
         protected void Logout_Click(object sender, EventArgs e)
