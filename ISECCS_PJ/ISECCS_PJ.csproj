@@ -158,6 +158,7 @@
     <Content Include="CSS\PublicAbout.css" />
     <Content Include="CSS\PublicContact.css" />
     <Content Include="CSS\RegisterLogin.css" />
+    <Content Include="CSS\UserHome.css" />
     <Content Include="CSS\UserWatermark.css" />
     <Content Include="Images\1195444816475588749Gerald_G_Lady_Face_Cartoon.svg.hi.png" />
     <Content Include="Images\calm-clipart-7iaReRo5T.png" />
