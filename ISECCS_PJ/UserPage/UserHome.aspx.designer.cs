@@ -11,14 +11,5 @@ namespace ISECCS_PJ.UserPage {
     
     
     public partial class UserHome {
-        
-        /// <summary>
-        /// lbl_session2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_session2;
     }
 }
