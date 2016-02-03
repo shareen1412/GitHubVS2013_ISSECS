@@ -8,6 +8,8 @@ using System.IO;
 using System.Drawing;
 using DataAccessLayer;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 using System.Web.Providers.Entities;
 using BusinessLogicLayer;
@@ -16,6 +18,10 @@ namespace ISECCS_PJ.UserPage
 {
     public partial class UserWatermarking : System.Web.UI.Page
     {
+        WatermarkUploadBLL wuBLL = new WatermarkUploadBLL();
+        WatermarkUploadDAL wuDAL = new WatermarkUploadDAL();
+
+        private string _connStr = Properties.Settings.Default.DBConnStr;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +29,6 @@ namespace ISECCS_PJ.UserPage
 
         protected void bn_preview_Click(object sender, EventArgs e)
         {
-
             try
             {
                 // Here we will upload image with watermark text
@@ -78,7 +83,7 @@ namespace ISECCS_PJ.UserPage
 
                 else if (a != ".jpg" && a != ".png")
                 {
-                    Response.Write("<script>alert('Wrong file format! Only .jpg and .png files are accepted.')</script>");
+                    Response.Write("<script>alert('Invalid file format! Only .jpg and .png files are accepted.')</script>");
                 }
 
                 else if (tb_watermarkText.Text == "")
@@ -92,35 +97,77 @@ namespace ISECCS_PJ.UserPage
         {
             try
             {
-                string filename = img_userImage.ImageUrl;
 
-                //string fileName = Path.GetExtension(fu_fileName.PostedFile.FileName);
+                if (img_userImage.ImageUrl == "")
+                {
+                    Response.Write("<script>alert('No image is available to download.')</script>");
+                }
+                else
+                {
+                    string filename = img_userImage.ImageUrl;
 
-                Response.ContentType = "image/JPEG";
-                //Response.AddHeader("Content-Disposition", "attachment; filename=" + filename + "");
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + "watermarked_" + filename.Remove(0, 15));
+                    Response.ContentType = "image/JPEG";
+                    //Response.AddHeader("Content-Disposition", "attachment; filename=" + filename + "");
+                    Response.AddHeader("Content-Disposition", "attachment; filename=" + "watermarked_" + filename.Remove(0, 15));
 
-                Response.TransmitFile(filename);
-                Response.End();
-            }
-            catch (Exception ex)
+                    Response.TransmitFile(filename);
+                    Response.End();
+                }
+            }//try
+            catch
             {
-
-            }
+            }//catch
         }//bn_download
-
-        protected void bn_back_Click(object sender, EventArgs e)
-        {
-            //string path = Server.MapPath("~/TempImages/");
-            //File.Delete(path);
-            Response.Redirect("~/UserPage/UserHome");
-        }//bn_back
 
         protected void bn_upload_Click(object sender, EventArgs e)
         {
-            string fileName = img_userImage.ImageUrl;
+            //string filename = img_userImage.ImageUrl;
+            //string pathName = Path.Combine(Server.MapPath("~/TempImages/"),fileName);
 
-            //watermarkBLL.UploadFile(fileName, Session["UserName"].ToString());
+            //byte[] data = File.ReadAllBytes(filename);
+
+            //UploadFile(Session["UserName"].ToString(), filename);
+
+            if (img_userImage.ImageUrl == "")
+            {
+                Response.Write("<script>alert('No image is available to preview.')</script>");
+            }
+            else
+            {
+                UploadImage();
+                Response.Write("<script>alert('File successfully uploaded.')</script>");
+                img_userImage.ImageUrl = "";
+            }
         }//bn_upload
+
+        public void UploadImage()
+        {
+            string imagePath = img_userImage.ImageUrl;
+
+            string queryStr = "INSERT INTO FileStorage (userName, fileName, currentTimeDate) " +
+                "VALUES(@userName, @fileName, @currentTimeDate)";
+
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+
+            conn.Open();
+
+            cmd.Parameters.AddWithValue("@userName", Session["UserName"].ToString());
+            cmd.Parameters.AddWithValue("@fileName", imagePath);
+            cmd.Parameters.AddWithValue("@currentTimeDate", DateTime.Now);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            //try
+            //{
+
+            //}
+            //catch
+            //{
+
+            //}
+        }//UploadImage()
     }
 }
