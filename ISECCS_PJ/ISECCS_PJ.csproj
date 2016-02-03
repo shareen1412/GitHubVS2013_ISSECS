@@ -239,6 +239,7 @@
     <Content Include="UserPage\Steganography.aspx" />
     <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
+    <Content Include="UserPage\UserResetPassword.aspx" />
     <Content Include="UserPage\UserWatermarking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -478,6 +479,13 @@
     </Compile>
     <Compile Include="UserPage\UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserResetPassword.aspx.cs">
+      <DependentUpon>UserResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UserResetPassword.aspx.designer.cs">
+      <DependentUpon>UserResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserWatermarking.aspx.cs">
       <DependentUpon>UserWatermarking.aspx</DependentUpon>

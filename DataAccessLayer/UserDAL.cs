@@ -48,6 +48,11 @@ namespace DataAccessLayer
             // TODO: Complete member initialization
         }
 
+        public UserDAL(string hash)
+        {
+            slowHashSalt = hash;
+        }
+
         public string UserName
         {
             get { return userName; }
@@ -333,7 +338,47 @@ namespace DataAccessLayer
             return nofRow;
         }
 
-        
+        public string RetrieveHash(string username)
+        {
+            string hash = "";
+            string queryStr = "SELECT slowHashSalt FROM TableUser2 WHERE userName = @userName";
+
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            
+            cmd.Parameters.AddWithValue("@userName", username);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                hash = dr["slowHashSalt"].ToString();
+                //UserDAL userdal = new UserDAL(hash);
+            }
+            
+            conn.Close();
+
+            return hash;
+        }
+
+        public int UpdatePassword(string hashPassword, string username)
+        {
+            string queryStr = "UPDATE TableUser2 SET slowHashSalt = @slowHashSalt WHERE userName = @userName";
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+
+            cmd.Parameters.AddWithValue("@userName", username);
+            cmd.Parameters.AddWithValue("@slowHashSalt", hashPassword);
+
+            //Hash the new password
+            //Hashing
+            conn.Open();
+            int nofRow = 0;
+            nofRow = cmd.ExecuteNonQuery();
+            conn.Close(); 
+            conn.Dispose();
+            cmd.Dispose();
+            return nofRow;
+        }
 
         //public int Hash()
         //{

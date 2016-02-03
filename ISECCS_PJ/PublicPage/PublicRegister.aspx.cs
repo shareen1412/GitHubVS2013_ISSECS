@@ -37,7 +37,7 @@ namespace ISECCS_PJ.PublicPage
 
         protected void btn_register_Click(object sender, EventArgs e)
         {
-            if (checkAgainstSQLinjection(tb_username.Text) == true && checkAgainstSQLinjection(tb_name.Text) && checkAgainstSQLinjection(tb_email.Text) && checkAgainstSQLinjection(tb_contact.Text)) 
+            if (checkAgainstSQLinjection(tb_username.Text) == true && checkAgainstSQLinjection(tb_name.Text) && checkAgainstSQLinjection(tb_contact.Text))
             {
                 string message = "";
 
@@ -67,16 +67,16 @@ namespace ISECCS_PJ.PublicPage
                         break;
                 }
 
-            //lblPasswordStrength.Text = "Status : " + status;
-            //if (marks < 4)
-            //{
-            //    lblPasswordStrength.ForeColor = Color.Red;
-            //    return;
-            //}
-            //else
-            //{
-            //    lblPasswordStrength.ForeColor = Color.Green;
-            //}
+                //lblPasswordStrength.Text = "Status : " + status;
+                //if (marks < 4)
+                //{
+                //    lblPasswordStrength.ForeColor = Color.Red;
+                //    return;
+                //}
+                //else
+                //{
+                //    lblPasswordStrength.ForeColor = Color.Green;
+                //}
 
                 //Validating captcha
                 bool isCaptchaValid = false;
@@ -116,7 +116,7 @@ namespace ISECCS_PJ.PublicPage
                             lblPasswordStrength.ForeColor = Color.Red;
                         }
 
-                    
+
                     }
                     else
                     {
@@ -126,7 +126,7 @@ namespace ISECCS_PJ.PublicPage
                         lblPasswordStrength.Text = "Password strength: " + status + ". Please try again.";
                         lblPasswordStrength.ForeColor = Color.Red;
                     }
-                
+
                 }
                 else
                 {
@@ -139,15 +139,15 @@ namespace ISECCS_PJ.PublicPage
             }
             else
             {
-                lbl_msg.Text = "Please don't insert any Cross site scripting.";
+                lbl_msg.Text = "Please do not include special characters except in password and email field. Please try again.";
             }
-                
+
         }
 
         //To prevent SQL injection by checking aganist values.
         private bool checkAgainstSQLinjection(string userName)
         {
-            var regExpression = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]*$");
+            var regExpression = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]* $");
             if (regExpression.IsMatch(userName))
             {
                 return true;
@@ -211,7 +211,7 @@ namespace ISECCS_PJ.PublicPage
         //    }
 
         //}
-        
+
         //Password strength = very weak,weak, medium, strong and very strong.
         private int GetPasswordStrength(string password)
         {
@@ -250,7 +250,7 @@ namespace ISECCS_PJ.PublicPage
 
         }
 
-        
+
 
         //protected void btnSave_Click(object sender, EventArgs e)
         //{
@@ -335,7 +335,7 @@ namespace ISECCS_PJ.PublicPage
         //        Console.ReadLine();
         //    }
         //}
-        
+
 
         ////To validate captcha
         //protected void btn_submitcaptcha_Click(object sender, EventArgs e)

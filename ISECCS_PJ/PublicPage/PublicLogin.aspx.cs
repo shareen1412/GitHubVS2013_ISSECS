@@ -24,6 +24,7 @@ namespace ISECCS_PJ.PublicPage
     public partial class PublicLogin : System.Web.UI.Page
     {
         UserBLL userbll = new UserBLL();
+        UserDAL userdal = new UserDAL();
 
         private string _connStr = Properties.Settings.Default.DBConnStr;
 
@@ -52,7 +53,9 @@ namespace ISECCS_PJ.PublicPage
             {
                 if (checkAgainstSQLinjection(tb_username.Text) == true)// && checkAgainstSQLinjection(tb_password.Text) == true)
                 {
+                     
                     LoginWithPasswordHashFunction();
+                    //string passwordhash = userdal.RetrieveHash(tb_username.Text);
                 }
                 else
                 {
@@ -158,7 +161,6 @@ namespace ISECCS_PJ.PublicPage
 
             try
             {
-                //String _connStr = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
                 string queryStr = "SELECT userName, slowHashSalt FROM TableUser2 WHERE userName = @userName";
 
                 SqlConnection conn = new SqlConnection(_connStr);

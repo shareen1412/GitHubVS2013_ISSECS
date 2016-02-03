@@ -28,7 +28,7 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>
-                <asp:Button ID="btn_reset" runat="server" Text="Reset Password" Width="129px" OnClick="btn_reset_Click" />
+                <asp:Button ID="btn_reset" runat="server" Text="Change Password" Width="139px" OnClick="btn_reset_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btn_clear" runat="server" Text="Clear" OnClick="btn_clear_Click" Width="120px" />
             </td>
@@ -39,6 +39,8 @@
                 <asp:Label ID="lbl_msg" runat="server" ForeColor="#CC0000"></asp:Label>
                 <br />
                 <asp:Label ID="lbl_msg2" runat="server" ForeColor="#CC0000"></asp:Label>
+                <br />
+                <asp:Label ID="lblPasswordStrength" runat="server" ForeColor="#CC0000"></asp:Label>
             </td>
         </tr>
     </table>
