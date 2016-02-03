@@ -235,8 +235,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="MasterPage\PublicMaster.Master" />
+    <Content Include="SRVTextToImage.dll" />
     <Content Include="UserPage\Cryptography.aspx" />
+    <Content Include="UserPage\CryptographyFile.aspx" />
     <Content Include="UserPage\Steganography.aspx" />
+    <Content Include="UserPage\SteganographyText.aspx" />
+    <Content Include="UserPage\SteganographyTextDe.aspx" />
+    <Content Include="UserPage\Steganography_De.aspx" />
     <Content Include="UserPage\UserChangePassword.aspx" />
     <Content Include="UserPage\UserHome.aspx" />
     <Content Include="UserPage\UserWatermarking.aspx" />
@@ -458,12 +463,40 @@
     <Compile Include="UserPage\Cryptography.aspx.designer.cs">
       <DependentUpon>Cryptography.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\CryptographyFile.aspx.cs">
+      <DependentUpon>CryptographyFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\CryptographyFile.aspx.designer.cs">
+      <DependentUpon>CryptographyFile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Steganography.aspx.cs">
       <DependentUpon>Steganography.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\Steganography.aspx.designer.cs">
       <DependentUpon>Steganography.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\SteganographyText.aspx.cs">
+      <DependentUpon>SteganographyText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\SteganographyText.aspx.designer.cs">
+      <DependentUpon>SteganographyText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\SteganographyTextDe.aspx.cs">
+      <DependentUpon>SteganographyTextDe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\SteganographyTextDe.aspx.designer.cs">
+      <DependentUpon>SteganographyTextDe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Steganography_De.aspx.cs">
+      <DependentUpon>Steganography_De.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Steganography_De.aspx.designer.cs">
+      <DependentUpon>Steganography_De.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\UserChangePassword.aspx.cs">
       <DependentUpon>UserChangePassword.aspx</DependentUpon>

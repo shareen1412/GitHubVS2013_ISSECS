@@ -13,8 +13,6 @@ namespace ISECCS_PJ.UserPage
 {
     public partial class Cryptography : System.Web.UI.Page
     {
-        byte[] Key;
-        byte[] IV;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,29 +21,58 @@ namespace ISECCS_PJ.UserPage
             //    btn_encrypt.Enabled = true;
         }
 
-        protected void btn_decrypt_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         protected void btn_encrypt_Click(object sender, EventArgs e)
         {
-            SymmetricAlgorithm sa = new RijndaelManaged();
-            sa.GenerateKey();
-            Key = sa.Key;
-            IV = sa.IV;
+            tb_cipher_en.Text = this.Encrypt(tb_plain_en.Text.Trim());
+        }
 
-            //Initialize instance for encryption
-            //SymmetricAlgorithm sa = new RijndaelManaged();
-            sa.Key = Key;
-            sa.IV = IV;
-            ICryptoTransform cryptTransform = sa.CreateEncryptor();
-            byte[] plainText = Encoding.UTF8.GetBytes(txtPlain.Text);
-            byte[] cipherText = cryptTransform.TransformFinalBlock(plainText, 0, plainText.Length);
-            txtCipher.Text = Convert.ToBase64String(cipherText);
-            btn_decrypt.Enabled = true;
+        private string Encrypt(string clearText)
+        {
+            string EncryptionKey = tb_pw_en.Text;
+            byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+            using (Aes encryptor = Aes.Create())
+            {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    clearText = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return clearText;
+        }
 
-            /*-----------------*/
+        protected void btn_decrypt_Click(object sender, EventArgs e)
+        {
+            tb_plain_de.Text = this.Decrypt(tb_cipher_de.Text.Trim());
+        }
+
+        private string Decrypt(string cipherText)
+        {
+            string EncryptionKey = tb_pw_de.Text;
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
+            using (Aes encryptor = Aes.Create())
+            {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(cipherBytes, 0, cipherBytes.Length);
+                        cs.Close();
+                    }
+                    cipherText = Encoding.Unicode.GetString(ms.ToArray());
+                }
+            }
+            return cipherText;
         }
 
     }

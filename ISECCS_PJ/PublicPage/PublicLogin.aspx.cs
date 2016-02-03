@@ -15,10 +15,7 @@ using System.Security.Cryptography.X509Certificates;
 
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
-using System.IO;
 namespace ISECCS_PJ.PublicPage
 {
     public partial class PublicLogin : System.Web.UI.Page

@@ -10,7 +10,7 @@
 namespace ISECCS_PJ.UserPage {
     
     
-    public partial class Steganography {
+    public partial class Steganography_De {
         
         /// <summary>
         /// btn_en control.
@@ -47,15 +47,6 @@ namespace ISECCS_PJ.UserPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_pw;
-        
-        /// <summary>
-        /// fileUpload_fileToHide control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUpload_fileToHide;
         
         /// <summary>
         /// lbl_msg control.

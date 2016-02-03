@@ -13,58 +13,58 @@ namespace ISECCS_PJ.UserPage {
     public partial class Cryptography {
         
         /// <summary>
-        /// fileUpload control.
+        /// tb_plain_en control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
+        protected global::System.Web.UI.WebControls.TextBox tb_plain_en;
         
         /// <summary>
-        /// txtPlain control.
+        /// tb_cipher_de control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlain;
+        protected global::System.Web.UI.WebControls.TextBox tb_cipher_de;
         
         /// <summary>
-        /// tb_pw control.
+        /// tb_pw_en control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_pw;
+        protected global::System.Web.UI.WebControls.TextBox tb_pw_en;
         
         /// <summary>
-        /// txtPlain0 control.
+        /// tb_pw_de control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlain0;
+        protected global::System.Web.UI.WebControls.TextBox tb_pw_de;
         
         /// <summary>
-        /// cb_watermark control.
+        /// tb_cipher_en control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_watermark;
+        protected global::System.Web.UI.WebControls.TextBox tb_cipher_en;
         
         /// <summary>
-        /// txtCipher control.
+        /// tb_plain_de control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCipher;
+        protected global::System.Web.UI.WebControls.TextBox tb_plain_de;
         
         /// <summary>
         /// btn_encrypt control.
